@@ -1,0 +1,33 @@
+# Destinations are processed in first-matching order.
+# A route can match only one destination.
+# hasPath and hasHeader are treated as AND conditions, and should be listed in more specific->less specific order.
+
+destinations:
+  # destination_name:
+  #   url: (optional) used when gateway should completely override the request domain,
+  #        such as when pointing to a cloud function.
+  #   hostname: (mandatory without url) hostname override to forward the incoming request to.
+  #   scheme: (mandatory with hostname) scheme of the override hostname.
+  #   hasPath: array of path tokens used to match a destination
+  #   hasHeader: array of header key:value pairs used to match a destination
+
+  comms:
+    url: null
+    hostname: marketing.spoonity.com
+    scheme: https
+    hasPath: [ 'v3', 'campaigns' ]
+    hasHeader: [ ]
+
+  apiv2staging:
+    url: null
+    hostname: api-staging.spoonity.com
+    scheme: https
+    hasPath: [ ]
+    hasHeader: [ 'env:staging' ]
+
+  apiv2prod:
+    url: null
+    hostname: api.spoonity.com
+    scheme: https
+    hasPath: [ 't2' ]
+    hasHeader: [ ]
