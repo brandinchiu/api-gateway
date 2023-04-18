@@ -23,6 +23,12 @@ class RequestValidator
     {
         $this->container = $container;
     }
+
+    /**
+     * @param RequestEvent $event
+     * @return void
+     * @throws \Exception
+     */
     public function execute(RequestEvent $event)
     {
         $destination = null;
@@ -97,6 +103,11 @@ class RequestValidator
              */
             throw new \Exception('HTTP504: Bad Gateway');
         }
+
+        $event->getRequest()->attributes->set(
+            'route-name',
+            $destination
+        );
 
         $event->getRequest()->attributes->set(
             'route-to',

@@ -100,6 +100,10 @@ class LoggingService
         return $this->logger;
     }
 
+    /**
+     * @param Request $request
+     * @return array
+     */
     protected function convertToHttpRequest(Request $request): array
     {
         /**

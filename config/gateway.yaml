@@ -11,23 +11,37 @@ destinations:
   #   hasPath: array of path tokens used to match a destination
   #   hasHeader: array of header key:value pairs used to match a destination
 
-  comms:
+  prod_v3_micro1:
     url: null
-    hostname: marketing.spoonity.com
+    hostname: webhook.site/43435bce-efd5-4520-9674-7911102e4dae
     scheme: https
-    hasPath: [ 'v3', 'campaigns' ]
+    hasPath: [ 'v3', 'one' ]
     hasHeader: [ ]
 
-  apiv2staging:
+  prod_v3_micro2:
     url: null
-    hostname: api-staging.spoonity.com
+    hostname: webhook.site/43435bce-efd5-4520-9674-7911102e4dae
     scheme: https
-    hasPath: [ ]
+    hasPath: [ 'v3', 'two' ]
+    hasHeader: [ ]
+
+  prod_v3_micro3:
+    url: null
+    hostname: webhook.site/43435bce-efd5-4520-9674-7911102e4dae
+    scheme: https
+    hasPath: [ 'v3', 'three' ]
+    hasHeader: [ ]
+
+  staging_v3_core:
+    url: null
+    hostname: webhook.site/43435bce-efd5-4520-9674-7911102e4dae
+    scheme: https
+    hasPath: [ 'v3' ]
     hasHeader: [ 'env:staging' ]
 
-  apiv2prod:
+  prod_v3_core:
     url: null
-    hostname: api.spoonity.com
+    hostname: webhook.site/43435bce-efd5-4520-9674-7911102e4dae
     scheme: https
-    hasPath: [ 't2' ]
+    hasPath: [ 'v3' ]
     hasHeader: [ ]
